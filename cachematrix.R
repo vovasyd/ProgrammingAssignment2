@@ -1,9 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This project implements custom functions to compute matrix inverse with caching feature
 
-## Write a short comment describing this function
+
+## makeCacheMatrix creates a specific list object to be used in cojunction with 
+## cacheSolve function to compute cached matrix inverse
 
 makeCacheMatrix <- function(x = matrix()) {
+    
   inv <- NULL
   set <- function(y){
     inv <<- NULL
@@ -17,10 +19,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve functin computes matrix inverse and caches result for next runs
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
   inv <- x$getinv()
   if (!is.null(inv)){
     message("geting cached data")
